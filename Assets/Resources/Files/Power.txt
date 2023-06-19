@@ -1,0 +1,10 @@
+constructor: 4
+assembler: 15
+refinery: 30
+manufacturer: 55
+packager: 10
+blender: 75
+particle accelerator: 750
+smelter: 4
+foundry: 16
+nuclear power plant: -2500
