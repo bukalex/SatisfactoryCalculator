@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RemoveRecipe : MonoBehaviour
@@ -19,9 +18,16 @@ public class RemoveRecipe : MonoBehaviour
             }
         }
 
+        StartCoroutine(removeRecipeCoroutine());
+    }
+
+    private IEnumerator removeRecipeCoroutine()
+    {
+        yield return new WaitForEndOfFrame();
+
         if (transform.childCount > 0)
         {
-            GetComponentInChildren<RecipeSettings>(true).changeBlueprint();
+            GetComponentInChildren<RecipeSettings>().changeBlueprint();
         }
     }
 }

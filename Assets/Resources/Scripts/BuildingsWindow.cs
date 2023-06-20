@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -72,7 +71,7 @@ public class BuildingsWindow : MonoBehaviour
             float normalAmount = 0;
             foreach (string recipe in buildingsFile[outputsSprite[recipeName].name])
             {
-                if (recipe.Contains(recipeName))
+                if (recipe.Split(" [")[0].Equals(recipeName))
                 {
                     buildingName = recipe.Split(" [")[1].Replace("]", "").Split(", ")[0];
                     string normalAmountString = recipe.Split(" [")[1].Replace("]", "").Split(", ")[1];
@@ -96,31 +95,30 @@ public class BuildingsWindow : MonoBehaviour
 
     private void count(GameObject branch)
     {
-        Sprite name = branch.transform.Find("ItemImage").GetComponent<Image>().sprite;
+        Sprite sprite = branch.transform.Find("ItemImage").GetComponent<Image>().sprite;
         float amount = float.Parse(branch.transform.Find("Amount").GetComponent<InputField>().text);
-        Dictionary<GameObject, float> branches = new Dictionary<GameObject, float>();
+        string name = branch.transform.Find("Title").GetComponent<Dropdown>().captionText.text;
+        Dictionary<GameObject, float> branches = branch.GetComponentInChildren<BranchSettings>().getBranches();
 
-        if (!branch.tag.Equals("SideBranch"))
+        if (branches.Count > 0)
         {
-            branches = branch.GetComponentInChildren<BranchSettings>().getBranches();
-        }
-
-        if (branch.tag.Equals("Branch") && branches.Count > 0)
-        {
-            if (outputsSum.ContainsKey(name.name))
+            if (outputsSum.ContainsKey(name))
             {
-                outputsSum[name.name] += amount;
+                outputsSum[name] += amount;
             }
             else
             {
-                outputsSum.Add(name.name, amount);
-                outputsSprite.Add(name.name, name);
+                outputsSum.Add(name, amount);
+                outputsSprite.Add(name, sprite);
             }
         }
 
         foreach (GameObject key in branches.Keys)
         {
-            count(key);
+            if (key.tag.Equals("Branch"))
+            {
+                count(key);
+            }
         }
     }
 
