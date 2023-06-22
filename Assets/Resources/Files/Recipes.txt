@@ -39,7 +39,7 @@ encased industrial beam: encased industrial beam [steel beam x 4/1, concrete x 5
 encased plutonium cell: encased plutonium cell [plutonium pellet x 2/1, concrete x 4/1]; instant plutonium cell [non-fissile uranium x 150/20, aluminum casing x 20/20]
 encased uranium cell: encased uranium cell [uranium x 10/5, concrete x 3/5, sulfuric acid x 8/5 -> sulfuric acid x 2/5]; infused uranium cell [uranium x 5/4, silica x 3/4, sulfur x 5/4, quickwire x 15/4]
 explosive rebar: explosive rebar [iron rebar x 2/1, smokeless powder x 2/1, steel pipe x 2/1]
-fabric: fabric [mycelia x 1/1, biomass x 5/1], polyester fabric [polymer resin x 1/1, water x 1/1]
+fabric: fabric [mycelia x 1/1, biomass x 5/1]; polyester fabric [polymer resin x 1/1, water x 1/1]
 ficsit coupon: nature
 flower petals: nature
 fuel: fuel [crude oil x 6/4 -> polymer resin x 3/4]; residual fuel [heavy oil residue x 6/4]; unpackage fuel [packaged fuel x 2/2 -> empty canister x 2/2]; diluted fuel [heavy oil residue x 5/10, water x 10/10]
