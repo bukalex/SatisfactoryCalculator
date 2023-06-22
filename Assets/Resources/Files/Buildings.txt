@@ -39,7 +39,7 @@ encased industrial beam: encased industrial beam [assembler, 6/1]; encased indus
 encased plutonium cell: encased plutonium cell [assembler, 5/1]; instant plutonium cell [particle accelerator, 10/1]
 encased uranium cell: encased uranium cell [blender, 25/1]; infused uranium cell [manufacturer, 20/1]
 explosive rebar: explosive rebar [manufacturer, 5/1]
-fabric: fabric [assembler, 15/1], polyester fabric [refinery, 30/1]
+fabric: fabric [assembler, 15/1]; polyester fabric [refinery, 30/1]
 ficsit coupon: nature
 flower petals: nature
 fuel: fuel [refinery, 40/1]; residual fuel [refinery, 40/1]; unpackage fuel [packager, 60/1]; diluted fuel [blender, 100/1]
