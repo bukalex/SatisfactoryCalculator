@@ -33,8 +33,9 @@ public class AddWindowDropdown : MonoBehaviour
         {
             if (!(recipes[key][0].Equals("nature") && recipes[key].Length == 1))
             {
-                options.Add(new Dropdown.OptionData(key));
-                options[options.Count - 1].image = (Sprite)Resources.Load(imagesPath + key, typeof(Sprite));
+                Sprite sprite = (Sprite)Resources.Load(imagesPath + key, typeof(Sprite));
+                options.Add(new Dropdown.OptionData(key, sprite));
+                options[options.Count - 1].image = sprite;
             }
         }
         dropdown.options = options;
